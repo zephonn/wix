@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter Effect for Services</title>
+  <script src="https://unpkg.com/gsap@3.12/dist/gsap.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #333;
+      color: #fff;
+      font-family: "Helvetica", sans-serif;
+    }
+    
+    #app {
+      font-size: 3rem;
+      white-space: nowrap;
+      border-right: 2px solid orange;
+      overflow: hidden; /* Hide the text until it's typed */
+    }
+
+    @keyframes blinkCursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.js"></script>
+  <script>
+    const app = document.getElementById("app");
+    const typewriter = new Typewriter(app, {
+      loop: true, // Loop the typewriter effect
+      delay: 75, // Typing delay
+    });
+
+    // Define the services to be displayed
+    typewriter
+      .typeString("Auto Detailing")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("Ceramic Coating")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("Paint Protection Film")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("Interior Cleaning")
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString("Exterior Wash")
+      .pauseFor(2000)
+      .start(); // Start the typewriter effect
+  </script>
+</body>
+</html>
